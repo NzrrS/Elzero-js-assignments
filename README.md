@@ -1,4 +1,4 @@
-# JavaScript Assignments - Elzero Web School
+# JavaScript Assignments - Elzero Web School ⚡
 
 This repository contains JavaScript assignments from Elzero Web School. It covers fundamental and advanced JavaScript concepts through practical exercises.
 
