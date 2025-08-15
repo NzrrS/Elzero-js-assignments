@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   <style>
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px; /* slightly taller for padding */
+    border-radius: 50px;
+    border: 2px solid black;
+    max-width: 750px;
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  input {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  input:focus {
+    border-color: #007bff;
+  }
+
+  .result {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+</style>
+  </head>
+  <body>
+    <form action="">
+      <input type="number" name="dollar" placeholder="USD Dollar" />
+      <div class="result">0 USD Dollar = 0 Egyptian Pound</div>
+    </form>
+
+    <script>
+      const input = document.querySelector("form input");
+      const div = document.querySelector("div")
+      input.addEventListener("input",()=>{
+        let inputValue = input.value ? input.value : 0
+        div.textContent = `${inputValue} USD DOLLAR = ${(inputValue * 15.6).toFixed(2)} Egyptian Pound`
+      })
+    </script>
+  </body>
+</html>

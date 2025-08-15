@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 440px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+    }
+
+    .input, select, input[type="submit"] {
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 90%;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .box {
+      background: #2196F3;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center;
+      flex: 0 1 auto;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .box:hover {
+      background: #1976D2;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+  <input type="number" name="elements" class="input" placeholder="Number Of Elements" />
+  <input type="text" name="texts" class="input" placeholder="Elements Text" />
+  <select name="type" class="input">
+    <option value="Div">Div</option>
+    <option value="Section">Section</option>
+  </select>
+  <input type="submit" name="create" value="Create" />
+  <div class="results"></div>
+</form>
+  <script>
+    const form = document.forms[0];
+    const eleNbr = document.getElementsByClassName("input")[0]
+    const eleText = document.getElementsByClassName("input")[1]
+    const select = document.getElementsByClassName("input")[2]
+    const btn = document.getElementsByClassName("input")[3]
+    const div = document.querySelector("div")
+
+    form.addEventListener("submit",(e)=>{
+      e.preventDefault()
+      div.innerHTML="" 
+      const eleNbrValue = Number(eleNbr.value);
+  const eleTextValue = eleText.value.trim();
+  const selectValue = select.value;
+
+  for (let i = 0; i < eleNbrValue; i++) {
+    const element = document.createElement(selectValue);
+    element.className = "box";
+    element.title = "Element";
+    element.id = `id-${i}`;
+    element.textContent = eleTextValue;
+    div.appendChild(element);
+      }
+    })
+  </script>
+</body>
+</html>

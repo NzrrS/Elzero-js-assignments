@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="one" title="two">Two</div>
+    <div class="two" title="one">One</div>
+    <script>
+      const fdiv = document.querySelector(".one");
+      const sdiv = document.querySelector(".two");
+      const num = document.getElementsByTagName("div").length; // number of divs
+
+      // Swap titles
+      [fdiv.title, sdiv.title] = [sdiv.title, fdiv.title];
+
+      // Swap textContent
+      [fdiv.textContent, sdiv.textContent] = [
+        sdiv.textContent,
+        fdiv.textContent + " " + num,
+      ];
+    </script>
+  </body>
+</html>

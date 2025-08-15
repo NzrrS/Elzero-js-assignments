@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div id="elzero" class="element" name="js">JavaScript</div>
+  <script>
+    let div1 = document.getElementById("elzero")
+    let div2 = document.getElementsByClassName("element")[0]
+    let div3 = document.getElementsByName("js")[0]
+    let div4 = document.getElementsByTagName("div")[0]
+    let div5 = document.body.firstElementChild
+    let div6 = document.body.childNodes[1]
+    let div7 = document.body.children[0]
+    let div8 = document.querySelector("div")
+    let div9 = document.querySelector(".element")
+    let div10 = document.querySelector("#elzero")
+    let div11 = document.querySelector("[name = 'js']")
+    let div12 = document.querySelectorAll("div")[0]
+    let div13 = document.querySelectorAll(".element")[0]
+    let div14 = document.querySelectorAll("#elzero")[0]
+    let div15 = document.querySelectorAll("div[name = 'js']")[0]
+    let divs = [
+  div1, div2, div3, div4, div5, div6, div7, div8, div9, div10,
+  div11, div12, div13, div14, div15
+];
+    for (let i = 0 ; i < 16 ; i++){
+      console.log(i , divs[i])
+    }
+  </script>
+</body>
+</html>
